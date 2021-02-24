@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export const AddCategory = ( { setCategories }) => {
 
-    const [inputValue, setInputValue] = useState( 'Category name' );
+    const [inputValue, setInputValue] = useState( '' );
 
     const handleInputChange = ( e ) => {
         setInputValue( e.target.value );
@@ -21,9 +21,10 @@ export const AddCategory = ( { setCategories }) => {
 
     return (
         <form onSubmit={ handleSubmit }>
+            <p>{ inputValue }</p>
             <input
                 type="text"
-                placeholder={ inputValue }
+                value={ inputValue }
                 onChange={ handleInputChange}
             /> 
         </form>
